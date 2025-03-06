@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semáforo</title>
     <style>
+        /* Reset de estilos */
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+         /* Estilização das lâmpadas do semáforo */
         .lamp{
            width: 150px;
            height: 150px;
@@ -23,10 +25,10 @@
            font-weight: bold;
            color: white;
            text-transform: uppercase;
-           background-color: #8B0000;
+           background-color: #8B0000;  /* Cor inicial para o vermelho escuro */
 
         }
-
+          /* Posicionamento centralizado da seção */
         section{
             display: flex;
             flex-direction: column;
@@ -37,7 +39,7 @@
             top: 50%;
             transform: translate(-50%,-50%);
         }
-
+           /* Estrutura do semáforo */
         .semaforo{
             background-color:black;
             border-radius: 10px;
@@ -46,7 +48,7 @@
             flex-direction: column;
             align-items: center;
         }
-
+           /* Cores iniciais apagadas das lâmpadas */
         #red{
             background-color: #8B0000 ;   
         }
@@ -56,12 +58,12 @@
         #green{
             background-color: #006400; 
         }
-
+        /* Inicialmente os textos dentro das lâmpadas ficam ocultos */
         .text{
             visibility: hidden;
         }
         
-
+       /* Estilização dos botões */
         button{
             padding: 10px;
             border-radius: 10px;
@@ -88,20 +90,22 @@
 </head>
 <body>
     <section>
+        <!-- Estrutura do Semáforo -->
         <div class="semaforo">
             <div id="red" class="lamp"><span id="textRed" class="text">Pare</span></div>
             <div id="yellow" class="lamp"><span id="textYellow" class="text">Atenção</span></div>
             <div id="green" class="lamp"><span id="textGreen" class="text">Siga</span></div>
         </div>
+        <!-- Botões para ativar as luzes do semáforo -->
         <div class="bot">
             <button onclick="vermelho()" class="bRed">Vermelho</button>
             <button onclick="amarelo()" class="bYellow">Amarelo</button>
             <button onclick="verde()" class="bGreen">Verde</button>
         </div>
     </section>
+    
     <script>
-
-
+/* Função para ativar a luz vermelha e exibir o texto "Pare" */
    function vermelho(){
    document.getElementById("red").style.backgroundColor = "#FF0000";
    document.getElementById("yellow").style.backgroundColor = "#8B8000";
@@ -110,20 +114,19 @@
    document.getElementById("textRed").style.visibility = "visible";
    document.getElementById("textYellow").style.visibility = "hidden";
    document.getElementById("textGreen").style.visibility = "hidden";
-    
-
    }
+     /* Função para ativar a luz amarela e exibir o texto "Atenção" */
    function amarelo(){
     document.getElementById("yellow").style.backgroundColor = "#FFD700";
     document.getElementById("red").style.backgroundColor =  "#8B0000";
     document.getElementById("green").style.backgroundColor = "#006400";
-
 
     document.getElementById("textRed").style.visibility = "hidden";
     document.getElementById("textYellow").style.visibility = "visible";
     document.getElementById("textGreen").style.visibility = "hidden";
     
    }
+    /* Função para ativar a luz verde e exibir o texto "Siga" */
    function verde(){
     document.getElementById("green").style.backgroundColor = "#00FF00";
     document.getElementById("red").style.backgroundColor = "#8B0000";  
